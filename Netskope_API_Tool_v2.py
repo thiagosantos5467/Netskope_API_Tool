@@ -513,7 +513,7 @@ def _clean_tags(raw: str) -> List[Dict[str, str]]:
         return []
     seen = set()
     out = []
-    for t in (x.strip() for x in raw.split(",")): # x.strip somente para remover espacos extras da tag
+    for t in (x.strip() for x in raw.split(",")):
         if t and t not in seen:
             out.append({"tag_name": t})
             seen.add(t)
@@ -889,4 +889,3 @@ def write_logs(log_filename: str, logs):
 
 if __name__ == "__main__":
     select_option()
-    # papps_tags_delete(get_papps(input("\nPrivate Apps starts with: ")))
